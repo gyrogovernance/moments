@@ -1,0 +1,51 @@
+title: "New Moment"
+labels: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Share a link, insight, or vision about life beyond poverty, unemployment, misinformation, and ecological degradation.
+
+        Labels are applied automatically from the form fields below.
+  - type: textarea
+    id: insight
+    attributes:
+      label: Insight
+      description: Your reflection. Why does this matter? What vision does it carry?
+      placeholder: This speaks to a world where...
+    validations:
+      required: true
+  - type: input
+    id: link
+    attributes:
+      label: Link
+      description: A URL to a video, article, image, document, or other resource.
+      placeholder: https://...
+  - type: dropdown
+    id: domain
+    attributes:
+      label: Domain
+      description: Which domain does this Moment belong to?
+      options:
+        - Economy
+        - Employment
+        - Education
+        - Ecology
+    validations:
+      required: true
+  - type: checkboxes
+    id: principles
+    attributes:
+      label: Principles
+      description: Select any principles that apply.
+      options:
+        - label: GMT
+        - label: ICV
+        - label: IIA
+        - label: ICI
+  - type: input
+    id: display_name
+    attributes:
+      label: Display Name
+      description: Optional. Leave blank if you want the app to show your GitHub username.
+      placeholder: Anonymous or your preferred public name
