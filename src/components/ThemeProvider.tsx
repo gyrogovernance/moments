@@ -14,6 +14,7 @@ type Theme = "light" | "dark" | "system";
 interface ThemeContextValue {
   theme: Theme;
   actualTheme: "light" | "dark";
+  mounted: boolean;
   setTheme: (theme: Theme) => void;
   toggleTheme: () => void;
 }
@@ -21,6 +22,8 @@ interface ThemeContextValue {
 const ThemeContext = createContext<ThemeContextValue | undefined>(undefined);
 
 export function ThemeProvider({ children }: { children: ReactNode }) {
+  const [mounted, setMounted] = useState(false);
+
   const [theme, setTheme] = useState<Theme>(() => {
     if (typeof window === "undefined") return "system";
     const savedTheme = localStorage.getItem("theme") as Theme | null;
@@ -54,6 +57,10 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
     }
   }, [theme]);
 
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
   const handleSetTheme = (nextTheme: Theme) => {
     setTheme(nextTheme);
     localStorage.setItem("theme", nextTheme);
@@ -68,6 +75,7 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
       value={{
         theme,
         actualTheme,
+        mounted,
         setTheme: handleSetTheme,
         toggleTheme,
       }}

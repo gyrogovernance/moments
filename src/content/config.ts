@@ -9,8 +9,8 @@ export const SITE_CONFIG = {
   repoName: "moments",
   discussionCategorySlug: "moments",
   discussionCategoryName: "moments",
-  repoId: "",
-  discussionCategoryId: "",
+  repoId: "R_kgDOSKa-Mg",
+  discussionCategoryId: "DIC_kwDOSKa-Ms4C7gT9",
   siteName: "Moments",
   siteDescription:
     "GitHub-native civil governance sandbox for sharing visions beyond poverty, unemployment, misinformation, and ecological degradation.",

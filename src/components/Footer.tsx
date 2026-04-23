@@ -4,7 +4,7 @@ import { SITE_CONFIG } from "@/content/config";
 export function Footer() {
   return (
     <footer className="mt-16 border-t border-border/40 bg-surface/80">
-      <div className="mx-auto max-w-6xl px-4 py-8 text-center sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-6xl px-4 pb-24 pt-8 text-center sm:px-6 sm:pb-28 lg:px-8">
         <p className="font-medium text-foreground-secondary">MOMENTS | GitHub-native civil governance sandbox</p>
         <nav className="mt-5 flex flex-wrap items-center justify-center gap-3 text-sm">
           <Link href="/" className="text-foreground-secondary hover:text-classic-blue">

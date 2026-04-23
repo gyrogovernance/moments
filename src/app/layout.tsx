@@ -11,18 +11,24 @@ const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
   display: "swap",
+  preload: true,
+  fallback: ["system-ui", "arial"],
 });
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
   display: "swap",
+  preload: true,
+  fallback: ["ui-monospace", "monospace"],
 });
 
 const nunito = Nunito({
   variable: "--font-nunito",
   subsets: ["latin"],
   display: "swap",
+  preload: true,
+  fallback: ["system-ui", "arial"],
   weight: ["400", "500", "600", "700", "800"],
 });
 
@@ -38,6 +44,13 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" suppressHydrationWarning className="scroll-smooth">
+      <head>
+        <style
+          dangerouslySetInnerHTML={{
+            __html: "body{font-family:var(--font-nunito),-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif}",
+          }}
+        />
+      </head>
       <body className={`${geistSans.variable} ${geistMono.variable} ${nunito.variable} antialiased`}>
         <ThemeProvider>
           <div className="blob-container">
@@ -46,14 +59,14 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
             <div className="blob blob-3" />
           </div>
 
-          <header className="glass-nav-shell mx-3 max-w-5xl md:mx-auto">
-            <LiquidGlassNav className="p-0">
-              <div className="flex h-16 items-center justify-between px-4">
-                <Link href="/" className="text-lg font-bold text-foreground">
+          <header className="glass-nav-shell fixed inset-x-0 bottom-3 z-40 flex justify-center px-3">
+            <LiquidGlassNav className="w-full max-w-3xl p-0">
+              <div className="flex h-14 items-center justify-between gap-4 px-4 sm:px-5">
+                <Link href="/" className="inline-flex items-center text-lg font-bold leading-none text-foreground">
                   Moments
                 </Link>
 
-                <nav className="flex items-center gap-4">
+                <nav className="flex items-center gap-1 sm:gap-1.5">
                   <Link href="/" className="nav-link text-sm font-bold text-foreground-secondary hover:text-classic-blue">
                     Home
                   </Link>
@@ -67,7 +80,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           </header>
 
           <div className="page-body">
-            <main className="mx-auto max-w-5xl px-4 py-10 sm:px-6 lg:px-8">{children}</main>
+            <main className="mx-auto max-w-5xl px-4 py-10 pb-14 sm:px-6 lg:px-8">{children}</main>
             <Footer />
           </div>
         </ThemeProvider>

@@ -7,6 +7,7 @@ import { SITE_CONFIG } from "@/content/config";
 export function GiscusComments({ discussionNumber }: { discussionNumber: number }) {
   const containerRef = useRef<HTMLDivElement>(null);
   const { actualTheme } = useTheme();
+  const term = `/moment/${discussionNumber}`;
 
   useEffect(() => {
     if (!containerRef.current || !SITE_CONFIG.repoId || !SITE_CONFIG.discussionCategoryId) return;
@@ -17,20 +18,21 @@ export function GiscusComments({ discussionNumber }: { discussionNumber: number 
     script.setAttribute("data-repo-id", SITE_CONFIG.repoId);
     script.setAttribute("data-category", SITE_CONFIG.discussionCategoryName);
     script.setAttribute("data-category-id", SITE_CONFIG.discussionCategoryId);
-    script.setAttribute("data-mapping", "number");
-    script.setAttribute("data-term", String(discussionNumber));
-    script.setAttribute("data-strict", "1");
+    script.setAttribute("data-mapping", "pathname");
+    script.setAttribute("data-term", term);
+    script.setAttribute("data-strict", "0");
     script.setAttribute("data-reactions-enabled", "1");
-    script.setAttribute("data-emit-metadata", "0");
+    script.setAttribute("data-emit-metadata", "1");
     script.setAttribute("data-input-position", "top");
     script.setAttribute("data-theme", actualTheme === "dark" ? "dark" : "light");
     script.setAttribute("data-lang", "en");
+    script.setAttribute("data-loading", "lazy");
     script.crossOrigin = "anonymous";
     script.async = true;
 
     containerRef.current.innerHTML = "";
     containerRef.current.appendChild(script);
-  }, [actualTheme, discussionNumber]);
+  }, [actualTheme, discussionNumber, term]);
 
   if (!SITE_CONFIG.repoId || !SITE_CONFIG.discussionCategoryId) {
     return (

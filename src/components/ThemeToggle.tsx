@@ -3,16 +3,19 @@
 import { useTheme } from "@/components/ThemeProvider";
 
 export default function ThemeToggle() {
-  const { actualTheme, toggleTheme } = useTheme();
+  const { actualTheme, mounted, toggleTheme } = useTheme();
+  const nextTheme = actualTheme === "light" ? "dark" : "light";
 
   return (
     <button
       onClick={toggleTheme}
       className="relative inline-flex h-8 w-8 items-center justify-center rounded-full bg-gradient-to-br from-blue-400 to-blue-500 text-white hover:scale-110 dark:bg-black/40 dark:from-transparent dark:to-transparent dark:hover:bg-black/60"
-      aria-label={`Switch to ${actualTheme === "light" ? "dark" : "light"} mode`}
-      title={`Switch to ${actualTheme === "light" ? "dark" : "light"} mode`}
+      aria-label={`Switch to ${mounted ? nextTheme : "theme"} mode`}
+      title={`Switch to ${mounted ? nextTheme : "theme"} mode`}
     >
-      {actualTheme === "light" ? (
+      {!mounted ? (
+        <span className="h-4 w-4 rounded-full bg-white/80" aria-hidden="true" />
+      ) : actualTheme === "light" ? (
         <svg className="h-4 w-4" fill="currentColor" viewBox="0 0 20 20">
           <path
             fillRule="evenodd"

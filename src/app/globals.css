@@ -67,10 +67,20 @@ html {
 }
 
 body {
-  font-family: var(--font-family-base);
+  font-family: var(--font-nunito), var(--font-family-base);
   background: var(--bg-base);
   color: var(--text-primary);
   min-height: 100vh;
+  font-feature-settings: "kern";
+  text-rendering: optimizeLegibility;
+}
+
+button,
+input,
+textarea,
+select,
+a {
+  font-family: inherit;
 }
 
 a,
@@ -145,8 +155,6 @@ select,
 }
 
 .glass-nav-shell {
-  position: sticky;
-  top: 0.75rem;
   z-index: 40;
 }
 
@@ -265,8 +273,15 @@ select,
 }
 
 .nav-link {
-  min-height: 44px;
-  min-width: 44px;
+  height: 36px;
+  min-width: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 0.9rem;
+  line-height: 1.1;
+  border-radius: 9999px;
+  vertical-align: middle;
 }
 
 .prose {
