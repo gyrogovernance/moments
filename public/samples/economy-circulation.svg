@@ -1,0 +1,18 @@
+<svg width="1200" height="800" viewBox="0 0 1200 800" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="800" rx="48" fill="#FFF8E8"/>
+  <circle cx="205" cy="163" r="128" fill="#FFD66B"/>
+  <circle cx="985" cy="618" r="150" fill="#F7A35C"/>
+  <circle cx="616" cy="386" r="234" fill="#FFF0C8"/>
+  <path d="M309 461C309 288.682 448.682 149 621 149C793.318 149 933 288.682 933 461" stroke="#C77727" stroke-width="20" stroke-linecap="round"/>
+  <path d="M902 423L932 462L885 479" stroke="#C77727" stroke-width="20" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M892 515C840 594 746 647 640 647C480.942 647 352 518.058 352 359" stroke="#8B5A18" stroke-width="20" stroke-linecap="round"/>
+  <path d="M320 401L352 360L398 379" stroke="#8B5A18" stroke-width="20" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="448" y="286" width="348" height="206" rx="30" fill="#FFFFFF" stroke="#E5B03C" stroke-width="8"/>
+  <rect x="493" y="338" width="142" height="28" rx="14" fill="#F8D67D"/>
+  <rect x="493" y="388" width="256" height="22" rx="11" fill="#F2E3B7"/>
+  <rect x="493" y="426" width="214" height="22" rx="11" fill="#F2E3B7"/>
+  <circle cx="728" cy="360" r="34" fill="#FFE38E"/>
+  <path d="M728 340V381" stroke="#AA6C16" stroke-width="10" stroke-linecap="round"/>
+  <path d="M748 360H708" stroke="#AA6C16" stroke-width="10" stroke-linecap="round"/>
+  <text x="118" y="708" fill="#7C4E13" font-family="Arial, sans-serif" font-size="42" font-weight="700">Economic circulation as visible public coordination</text>
+</svg>

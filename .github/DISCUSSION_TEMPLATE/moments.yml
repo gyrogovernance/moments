@@ -4,28 +4,34 @@ body:
   - type: markdown
     attributes:
       value: |
-        Share a link, insight, or vision about life beyond poverty, unemployment, misinformation, and ecological degradation.
+        Share media or text that creates useful context inside the governance sandbox.
+
+        A good Moment is simple:
+        - choose one domain
+        - share the media or text
+        - explain why it matters
+        - select the alignment principles that help interpret it responsibly
 
         Labels are applied automatically from the form fields below.
   - type: textarea
     id: insight
     attributes:
       label: Insight
-      description: Your reflection. Why does this matter? What vision does it carry?
-      placeholder: This speaks to a world where...
+      description: Explain the context in plain language. Why does this matter? What does it show or help people imagine?
+      placeholder: This Moment helps people see...
     validations:
       required: true
   - type: input
     id: link
     attributes:
       label: Link
-      description: A URL to a video, article, image, document, or other resource.
+      description: A URL to a video, article, image, document, or other resource. Leave blank if your Moment is text-only.
       placeholder: https://...
   - type: dropdown
     id: domain
     attributes:
       label: Domain
-      description: Which domain does this Moment belong to?
+      description: Which single domain best fits this Moment?
       options:
         - Economy
         - Employment
@@ -37,7 +43,7 @@ body:
     id: principles
     attributes:
       label: Principles
-      description: Select any principles that apply.
+      description: Select the alignment principles that help interpret this Moment and avoid displacement risks.
       options:
         - label: GMT
         - label: ICV

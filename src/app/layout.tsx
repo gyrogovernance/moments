@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     template: "%s | Moments",
   },
   description:
-    "GitHub-native civil governance sandbox for sharing visions beyond poverty, unemployment, misinformation, and ecological degradation.",
+    "Share your vision of life beyond poverty, unemployment, misinformation, and ecological degradation.",
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {

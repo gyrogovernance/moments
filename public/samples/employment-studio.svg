@@ -1,0 +1,21 @@
+<svg width="1200" height="800" viewBox="0 0 1200 800" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="800" rx="48" fill="#EEF7FF"/>
+  <circle cx="1020" cy="138" r="124" fill="#8CC8FF"/>
+  <circle cx="185" cy="637" r="154" fill="#A7E2D5"/>
+  <rect x="160" y="188" width="880" height="424" rx="38" fill="#FFFFFF" stroke="#8EBEF4" stroke-width="8"/>
+  <rect x="222" y="248" width="230" height="260" rx="28" fill="#E7F4FF"/>
+  <rect x="485" y="248" width="230" height="260" rx="28" fill="#F3ECFF"/>
+  <rect x="748" y="248" width="230" height="260" rx="28" fill="#EAFBF4"/>
+  <circle cx="336" cy="328" r="42" fill="#65A9F6"/>
+  <circle cx="600" cy="328" r="42" fill="#AF7AF4"/>
+  <circle cx="862" cy="328" r="42" fill="#57C78A"/>
+  <rect x="274" y="396" width="124" height="22" rx="11" fill="#9CC8FA"/>
+  <rect x="540" y="396" width="120" height="22" rx="11" fill="#CAA8FF"/>
+  <rect x="803" y="396" width="118" height="22" rx="11" fill="#94E2B2"/>
+  <path d="M450 376H486" stroke="#90A4C4" stroke-width="10" stroke-linecap="round"/>
+  <path d="M714 376H750" stroke="#90A4C4" stroke-width="10" stroke-linecap="round"/>
+  <path d="M396 548C445 573 504 588 567 588C630 588 688 573 739 548" stroke="#5478B3" stroke-width="16" stroke-linecap="round"/>
+  <path d="M600 138V198" stroke="#5E96D8" stroke-width="14" stroke-linecap="round"/>
+  <path d="M570 168H630" stroke="#5E96D8" stroke-width="14" stroke-linecap="round"/>
+  <text x="137" y="708" fill="#345A88" font-family="Arial, sans-serif" font-size="42" font-weight="700">Employment as coordinated contribution rather than survival pressure</text>
+</svg>

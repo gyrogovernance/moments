@@ -17,7 +17,9 @@ export function MomentCard({ moment }: { moment: Moment }) {
 
   return (
     <Link href={`/moment/${moment.number}`} className="block">
-      <LiquidGlassCard className={`glass-card ${domainConfig?.colorClass ?? "glass-card-translucent"} rounded-[1.5rem] h-full shadow-2xl hover:-translate-y-1`}>
+      <LiquidGlassCard
+        className={`glass-card ${domainConfig?.colorClass ?? "glass-card-translucent"} h-full rounded-[1.5rem] shadow-2xl transition-all duration-200 hover:-translate-y-1`}
+      >
         <article className="flex h-full flex-col gap-4 p-4">
           {moment.parsedBody.mediaEmbed ? <MediaEmbed embed={moment.parsedBody.mediaEmbed} preview={true} /> : null}
 
@@ -25,14 +27,18 @@ export function MomentCard({ moment }: { moment: Moment }) {
             <span className="inline-flex items-center rounded-full border border-white/25 bg-white/12 px-3 py-1 text-xs font-semibold text-foreground-secondary dark:bg-white/5">
               {domainConfig?.emoji} {moment.domain}
             </span>
-            {moment.principles.map((principle) => (
-              <span
-                key={principle}
-                className="inline-flex items-center rounded-full border border-border/50 bg-surface-elevated/60 px-3 py-1 text-xs font-semibold text-foreground-secondary"
-              >
-                {principle}
-              </span>
-            ))}
+            {moment.principles.map((principleId) => {
+              const principle = SITE_CONFIG.principles.find((item) => item.id === principleId);
+              return principle ? (
+                <span
+                  key={principleId}
+                  className="inline-flex items-center rounded-full border border-border/50 bg-surface-elevated/60 px-3 py-1 text-xs font-semibold text-foreground-secondary"
+                  title={principle.description}
+                >
+                  {principle.shortName}
+                </span>
+              ) : null;
+            })}
           </div>
 
           <div>

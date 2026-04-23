@@ -1,0 +1,22 @@
+<svg width="1200" height="800" viewBox="0 0 1200 800" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="800" rx="48" fill="#F5F0FF"/>
+  <circle cx="187" cy="146" r="110" fill="#CFB8FF"/>
+  <circle cx="1002" cy="636" r="136" fill="#A5D8FF"/>
+  <rect x="183" y="166" width="834" height="470" rx="36" fill="#FFFFFF" stroke="#C7AEF6" stroke-width="8"/>
+  <path d="M266 300C266 269.072 291.072 244 322 244H876C906.928 244 932 269.072 932 300V500C932 530.928 906.928 556 876 556H322C291.072 556 266 530.928 266 500V300Z" fill="#F8F3FF"/>
+  <circle cx="392" cy="364" r="56" fill="#8D72E8"/>
+  <circle cx="601" cy="400" r="56" fill="#64B5F6"/>
+  <circle cx="806" cy="338" r="56" fill="#7BCFA7"/>
+  <path d="M444 376L545 393" stroke="#9C8DE1" stroke-width="14" stroke-linecap="round"/>
+  <path d="M653 388L750 349" stroke="#86BDEB" stroke-width="14" stroke-linecap="round"/>
+  <path d="M392 308V420" stroke="#FFFFFF" stroke-width="10" stroke-linecap="round"/>
+  <path d="M336 364H448" stroke="#FFFFFF" stroke-width="10" stroke-linecap="round"/>
+  <path d="M570 370L631 431" stroke="#FFFFFF" stroke-width="10" stroke-linecap="round"/>
+  <path d="M631 370L570 431" stroke="#FFFFFF" stroke-width="10" stroke-linecap="round"/>
+  <path d="M806 302V374" stroke="#FFFFFF" stroke-width="10" stroke-linecap="round"/>
+  <circle cx="806" cy="392" r="8" fill="#FFFFFF"/>
+  <rect x="325" y="470" width="196" height="22" rx="11" fill="#DFD2FA"/>
+  <rect x="552" y="470" width="136" height="22" rx="11" fill="#D5EAFD"/>
+  <rect x="720" y="470" width="138" height="22" rx="11" fill="#D6F1E1"/>
+  <text x="171" y="708" fill="#5E43A6" font-family="Arial, sans-serif" font-size="42" font-weight="700">Education as legible source distinction and trustworthy learning</text>
+</svg>

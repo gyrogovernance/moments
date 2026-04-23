@@ -42,49 +42,50 @@ export function MomentsFeed({
 
   return (
     <section id="moments-feed" className="space-y-6">
-      <div className="flex flex-col gap-4">
-        <div className="flex flex-wrap gap-2">
-          {(["All", ...SITE_CONFIG.domains.map((domain) => domain.id)] as const).map((domain) => (
-            <button
-              key={domain}
-              onClick={() => setSelectedDomain(domain)}
-              className={`rounded-full border px-4 py-2 text-sm font-semibold backdrop-blur-md ${
-                selectedDomain === domain
-                  ? "border-classic-blue/50 bg-classic-blue/15 text-foreground"
-                  : "border-border/50 bg-white/12 text-foreground-secondary hover:bg-white/20 dark:bg-white/5"
-              }`}
-            >
-              {domain}
-            </button>
-          ))}
-        </div>
-
-        <div className="flex flex-wrap gap-2">
-          {SITE_CONFIG.principles.map((principle) => (
-            <button
-              key={principle.id}
-              onClick={() => setSelectedPrinciple((current) => (current === principle.id ? null : principle.id))}
-              className={`rounded-full border px-3 py-1.5 text-xs font-semibold ${
-                selectedPrinciple === principle.id
-                  ? "border-classic-purple/50 bg-classic-purple/15 text-foreground"
-                  : "border-border/50 bg-surface-elevated/70 text-foreground-secondary hover:bg-surface-elevated"
-              }`}
-            >
-              {principle.id}
-            </button>
-          ))}
-
-          <select
-            className="rounded-full border border-border/50 bg-surface-elevated/70 px-4 py-2 text-sm text-foreground"
-            value={sortMode}
-            onChange={(event) => setSortMode(event.target.value as SortMode)}
-            aria-label="Sort moments"
+      <div className="flex flex-wrap items-center gap-2">
+        {(["All", ...SITE_CONFIG.domains.map((domain) => domain.id)] as const).map((domain) => (
+          <button
+            key={domain}
+            onClick={() => setSelectedDomain(domain)}
+            className={`rounded-full border px-4 py-2 text-sm font-semibold backdrop-blur-md transition-all duration-200 ${
+              selectedDomain === domain
+                ? "border-classic-blue/50 bg-classic-blue/15 text-foreground"
+                : "border-border/50 bg-white/12 text-foreground-secondary hover:bg-white/20 dark:bg-white/5"
+            }`}
           >
-            <option>Newest</option>
-            <option>Most commented</option>
-            <option>Most reacted</option>
-          </select>
-        </div>
+            {domain === "All"
+              ? "All"
+              : `${SITE_CONFIG.domains.find((item) => item.id === domain)?.emoji} ${domain}`}
+          </button>
+        ))}
+      </div>
+
+      <div className="flex flex-wrap items-center gap-2">
+        {SITE_CONFIG.principles.map((principle) => (
+          <button
+            key={principle.id}
+            onClick={() => setSelectedPrinciple((current) => (current === principle.id ? null : principle.id))}
+            title={principle.description}
+            className={`rounded-full border px-3 py-1.5 text-xs font-semibold transition-all duration-200 ${
+              selectedPrinciple === principle.id
+                ? "border-classic-purple/50 bg-classic-purple/15 text-foreground"
+                : "border-border/50 bg-surface-elevated/70 text-foreground-secondary hover:bg-surface-elevated"
+            }`}
+          >
+            {principle.shortName}
+          </button>
+        ))}
+
+        <select
+          className="ml-auto rounded-full border border-border/50 bg-surface-elevated/70 px-4 py-2 text-sm text-foreground"
+          value={sortMode}
+          onChange={(event) => setSortMode(event.target.value as SortMode)}
+          aria-label="Sort moments"
+        >
+          <option>Newest</option>
+          <option>Most commented</option>
+          <option>Most reacted</option>
+        </select>
       </div>
 
       {filteredMoments.length ? (
@@ -97,9 +98,7 @@ export function MomentsFeed({
         <LiquidGlassCard className="glass-card glass-card-translucent rounded-[2rem] shadow-2xl">
           <div className="p-6 text-center">
             <h3 className="text-xl font-bold text-foreground">No Moments yet in this view.</h3>
-            <p className="mt-3 text-foreground-secondary">
-              Adjust the filters, or be the first to share one on GitHub Discussions.
-            </p>
+            <p className="mt-3 text-foreground-secondary">Be the first to share one.</p>
             <a
               href={SITE_CONFIG.createMomentUrl}
               target="_blank"

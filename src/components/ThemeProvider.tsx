@@ -22,8 +22,6 @@ interface ThemeContextValue {
 const ThemeContext = createContext<ThemeContextValue | undefined>(undefined);
 
 export function ThemeProvider({ children }: { children: ReactNode }) {
-  const [mounted, setMounted] = useState(false);
-
   const [theme, setTheme] = useState<Theme>(() => {
     if (typeof window === "undefined") return "system";
     const savedTheme = localStorage.getItem("theme") as Theme | null;
@@ -44,6 +42,12 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
     () => false,
   );
 
+  const mounted = useSyncExternalStore(
+    () => () => {},
+    () => true,
+    () => false,
+  );
+
   const actualTheme: "light" | "dark" =
     theme === "dark" || (theme === "system" && systemPrefersDark) ? "dark" : "light";
 
@@ -56,10 +60,6 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
       localStorage.setItem("theme", theme);
     }
   }, [theme]);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
 
   const handleSetTheme = (nextTheme: Theme) => {
     setTheme(nextTheme);

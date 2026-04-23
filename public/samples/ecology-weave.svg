@@ -1,0 +1,18 @@
+<svg width="1200" height="800" viewBox="0 0 1200 800" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="800" rx="48" fill="#ECFFF8"/>
+  <circle cx="1043" cy="171" r="122" fill="#AEE7D2"/>
+  <circle cx="182" cy="630" r="145" fill="#C6F2E6"/>
+  <path d="M197 530C283 430 390 380 520 380C707 380 821 216 1000 170" stroke="#3CA879" stroke-width="18" stroke-linecap="round"/>
+  <path d="M202 594C319 513 421 492 560 500C728 509 839 432 1002 331" stroke="#47B58A" stroke-width="18" stroke-linecap="round"/>
+  <path d="M202 652C350 620 475 621 608 646C770 676 879 638 1015 544" stroke="#2B8F65" stroke-width="18" stroke-linecap="round"/>
+  <circle cx="357" cy="468" r="68" fill="#FFFFFF" stroke="#7AD4B0" stroke-width="8"/>
+  <circle cx="620" cy="426" r="68" fill="#FFFFFF" stroke="#7AD4B0" stroke-width="8"/>
+  <circle cx="868" cy="270" r="68" fill="#FFFFFF" stroke="#7AD4B0" stroke-width="8"/>
+  <path d="M338 487C351 446 379 425 412 411" stroke="#3CA879" stroke-width="10" stroke-linecap="round"/>
+  <path d="M604 445C617 404 644 382 677 368" stroke="#3CA879" stroke-width="10" stroke-linecap="round"/>
+  <path d="M851 288C861 253 888 230 920 219" stroke="#3CA879" stroke-width="10" stroke-linecap="round"/>
+  <path d="M357 431V510" stroke="#56B78D" stroke-width="10" stroke-linecap="round"/>
+  <path d="M620 390V468" stroke="#56B78D" stroke-width="10" stroke-linecap="round"/>
+  <path d="M868 235V313" stroke="#56B78D" stroke-width="10" stroke-linecap="round"/>
+  <text x="173" y="711" fill="#256B4B" font-family="Arial, sans-serif" font-size="42" font-weight="700">Ecology as the balance that emerges when the other domains stay aligned</text>
+</svg>

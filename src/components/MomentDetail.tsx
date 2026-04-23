@@ -9,7 +9,6 @@ marked.setOptions({ gfm: true, breaks: true });
 
 export async function MomentDetail({ moment }: { moment: Moment }) {
   const domainConfig = SITE_CONFIG.domains.find((domain) => domain.id === moment.domain);
-  const principleConfigs = SITE_CONFIG.principles.filter((principle) => moment.principles.includes(principle.id));
   const totalReactions = Object.values(moment.reactionCounts).reduce((sum, value) => sum + value, 0);
   const html = await marked.parse(moment.parsedBody.insight);
 
@@ -20,14 +19,18 @@ export async function MomentDetail({ moment }: { moment: Moment }) {
           <span className="inline-flex items-center rounded-full border border-white/25 bg-white/12 px-3 py-1 text-sm font-semibold text-foreground-secondary dark:bg-white/5">
             {domainConfig?.emoji} {moment.domain}
           </span>
-          {principleConfigs.map((principle) => (
-            <span
-              key={principle.id}
-              className="inline-flex items-center rounded-full border border-border/50 bg-surface-elevated/60 px-3 py-1 text-sm font-semibold text-foreground-secondary"
-            >
-              {principle.emoji} {principle.id}
-            </span>
-          ))}
+          {moment.principles.map((principleId) => {
+            const principle = SITE_CONFIG.principles.find((item) => item.id === principleId);
+            return principle ? (
+              <span
+                key={principleId}
+                className="inline-flex items-center rounded-full border border-border/50 bg-surface-elevated/60 px-3 py-1 text-sm font-semibold text-foreground-secondary"
+                title={principle.displacementWarning}
+              >
+                {principle.shortName}
+              </span>
+            ) : null;
+          })}
         </div>
 
         <div>
@@ -40,10 +43,27 @@ export async function MomentDetail({ moment }: { moment: Moment }) {
 
         {moment.parsedBody.mediaEmbed ? <MediaEmbed embed={moment.parsedBody.mediaEmbed} /> : null}
 
-        <div
-          className="prose max-w-none text-foreground-secondary"
-          dangerouslySetInnerHTML={{ __html: html }}
-        />
+        <div className="prose max-w-none text-foreground-secondary" dangerouslySetInnerHTML={{ __html: html }} />
+
+        {moment.principles.length > 0 ? (
+          <div className="glass-card-inner space-y-2 rounded-xl p-4">
+            <p className="text-xs font-bold uppercase tracking-widest text-foreground-tertiary">Principle Checks (The Human Mark)</p>
+            {moment.principles.map((principleId) => {
+              const principle = SITE_CONFIG.principles.find((item) => item.id === principleId);
+              return principle ? (
+                <div key={principleId} className="flex items-start gap-2 text-sm text-foreground-secondary">
+                  <span className="mt-0.5 text-foreground-tertiary">✓</span>
+                  <div>
+                    <p>
+                      <strong className="text-foreground">{principle.fullName}</strong> - {principle.description}
+                    </p>
+                    <p className="mt-1 text-xs text-foreground-tertiary">{principle.displacementWarning}</p>
+                  </div>
+                </div>
+              ) : null;
+            })}
+          </div>
+        ) : null}
 
         <div className="glass-card-inner rounded-xl p-4 text-sm text-foreground-secondary">
           <div className="flex flex-wrap items-center gap-4">

@@ -13,7 +13,7 @@ export const SITE_CONFIG = {
   discussionCategoryId: "DIC_kwDOSKa-Ms4C7gT9",
   siteName: "Moments",
   siteDescription:
-    "GitHub-native civil governance sandbox for sharing visions beyond poverty, unemployment, misinformation, and ecological degradation.",
+    "Share your vision of life beyond poverty, unemployment, misinformation, and ecological degradation.",
   siteUrl: "https://gyrogovernance.github.io/moments/",
   githubUrl: "https://github.com/gyrogovernance/moments",
   discussionsUrl: "https://github.com/gyrogovernance/moments/discussions",
@@ -26,9 +26,9 @@ export const SITE_CONFIG = {
       emoji: "💰",
       colorClass: "glass-card-amber",
       invitation: "Imagine abundance, not scarcity",
-      prompt: "What would abundance look like in your community?",
-      lens:
-        "The Moments Economy grounds coordination capacity in a physical constant, not institutional discretion. Scarcity stops governing the meaning of economic activity.",
+      prompt: "What would economic life look like if resources were truly available to everyone?",
+      lens: "Share Moments about resources, distribution, material security, or practical economic coordination.",
+      primaryPrinciple: "GMT" as PrincipleLabel,
     },
     {
       id: "Employment" as DomainLabel,
@@ -36,9 +36,9 @@ export const SITE_CONFIG = {
       emoji: "🤝",
       colorClass: "glass-card-blue",
       invitation: "Imagine purpose, not precarity",
-      prompt: "What would meaningful work mean for everyone?",
-      lens:
-        "Work becomes an expression of alignment rather than a condition for survival. AIR routes human capacity into paid work with replayable provenance.",
+      prompt: "What would work look like if everyone could contribute without fighting for survival?",
+      lens: "Share Moments about meaningful work, contribution pathways, or new forms of coordination.",
+      primaryPrinciple: "IIA" as PrincipleLabel,
     },
     {
       id: "Education" as DomainLabel,
@@ -46,9 +46,9 @@ export const SITE_CONFIG = {
       emoji: "📚",
       colorClass: "glass-card-purple",
       invitation: "Imagine clarity, not confusion",
-      prompt: "What would clarity look like if it were universal?",
-      lens:
-        "The Human Mark provides a culturally agnostic method for distinguishing Direct from Indirect sources. It makes misalignment legible without ideology.",
+      prompt: "What would education look like if people could trust what they know?",
+      lens: "Share Moments that teach, clarify, or help people see the difference between human and artificial sources.",
+      primaryPrinciple: "ICV" as PrincipleLabel,
     },
     {
       id: "Ecology" as DomainLabel,
@@ -56,63 +56,47 @@ export const SITE_CONFIG = {
       emoji: "🌿",
       colorClass: "glass-card-emerald",
       invitation: "Imagine balance, not depletion",
-      prompt: "What would balance feel like if it were everywhere?",
-      lens:
-        "Ecology is the integrative domain. It emerges from the combined state of Economy, Employment, and Education.",
+      prompt: "What would balance look like if economy, employment, and education were aligned?",
+      lens: "Share Moments about regeneration, stewardship, resilience, or whole-system balance.",
+      primaryPrinciple: "ICI" as PrincipleLabel,
     },
   ],
   principles: [
     {
       id: "GMT" as PrincipleLabel,
-      name: "Governance Management Traceability",
-      displacement: "GTD",
-      emoji: "🧭",
+      shortName: "Governance Traceability",
+      fullName: "Governance Traceability Displacement",
+      description: "Can you trace where a decision came from and who made it?",
+      guidance: "Before you post: can someone trace the origin of the claim or decision you are sharing?",
+      displacement: "Governance Traceability Displacement",
+      displacementWarning: "When authority is not traceable, decisions appear without clear origin or accountability.",
     },
     {
       id: "ICV" as PrincipleLabel,
-      name: "Information Curation Variety",
-      displacement: "IVD",
-      emoji: "📚",
+      shortName: "Information Variety",
+      fullName: "Information Variety Displacement",
+      description: "Are you seeing diverse sources, or just one type repeated?",
+      guidance: "Before you post: does your Moment add a perspective that is missing, or repeat what is already there?",
+      displacement: "Information Variety Displacement",
+      displacementWarning: "When variety is suppressed, a single perspective dominates and others are silenced.",
     },
     {
       id: "IIA" as PrincipleLabel,
-      name: "Inference Interaction Accountability",
-      displacement: "IAD",
-      emoji: "🧩",
+      shortName: "Inference Accountability",
+      fullName: "Inference Accountability Displacement",
+      description: "Is someone accountable for the conclusion, or did it appear from nowhere?",
+      guidance: "Before you post: is it clear who stands behind the reasoning you are sharing?",
+      displacement: "Inference Accountability Displacement",
+      displacementWarning: "When inferences are not accountable, conclusions circulate without anyone responsible for them.",
     },
     {
       id: "ICI" as PrincipleLabel,
-      name: "Intelligence Cooperation Integrity",
-      displacement: "IID",
-      emoji: "🤝",
+      shortName: "Intelligence Integrity",
+      fullName: "Intelligence Integrity Displacement",
+      description: "Is the whole picture coherent, or are parts working against each other?",
+      guidance: "Before you post: does your Moment strengthen the coherence of the domain, or fragment it?",
+      displacement: "Intelligence Integrity Displacement",
+      displacementWarning: "When integrity breaks, the system loses coherence as parts act in isolation.",
     },
   ],
 } as const;
-
-export const RESOURCE_LINKS = [
-  {
-    title: "Moments Economy Whitepaper",
-    description: "Civil governance framework for an attentiveness-based collective superintelligence.",
-    href: "https://github.com/gyrogovernance/superintelligence/blob/main/docs/AIR_Moments_Economy_Whitepaper.md",
-  },
-  {
-    title: "Moments Economy Specification",
-    description: "Moment-Units, Grants, Shells, Archives, and the Common Source Moment.",
-    href: "https://github.com/gyrogovernance/superintelligence/blob/main/docs/AIR_Moments_Economy_Specs.md",
-  },
-  {
-    title: "AIR Brief",
-    description: "How workforce capacity, safety work, and funding are routed into verifiable outputs.",
-    href: "https://github.com/gyrogovernance/superintelligence/blob/main/docs/AIR_Brief.md",
-  },
-  {
-    title: "AIR Logistics",
-    description: "Governance logistics, genealogies, and replayable verification.",
-    href: "https://github.com/gyrogovernance/superintelligence/blob/main/docs/AIR_Logistics.md",
-  },
-  {
-    title: "Moments Genealogies Specification",
-    description: "How genealogies, shared moments, and verification ground the transition path.",
-    href: "https://github.com/gyrogovernance/superintelligence/blob/main/docs/AIR_Moments_Genealogies_Specs.md",
-  },
-];
