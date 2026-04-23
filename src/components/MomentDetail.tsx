@@ -57,7 +57,9 @@ export async function MomentDetail({ moment }: { moment: Moment }) {
                     <p>
                       <strong className="text-foreground">{principle.fullName}</strong> - {principle.description}
                     </p>
-                    <p className="mt-1 text-xs text-foreground-tertiary">{principle.displacementWarning}</p>
+                    <p className="mt-1 text-xs text-foreground-tertiary">
+                      Risk: {principle.displacement} - {principle.displacementWarning}
+                    </p>
                   </div>
                 </div>
               ) : null;

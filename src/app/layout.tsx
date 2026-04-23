@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Nunito } from "next/font/google";
 import Link from "next/link";
+import { SITE_CONFIG } from "@/content/config";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import ThemeToggle from "@/components/ThemeToggle";
 import { LiquidGlassNav } from "@/components/LiquidGlassNav";
-import { Footer } from "@/components/Footer";
 import "@/app/globals.css";
 
 const geistSans = Geist({
@@ -41,6 +41,32 @@ export const metadata: Metadata = {
     "Share your vision of life beyond poverty, unemployment, misinformation, and ecological degradation.",
 };
 
+function TabItem({
+  href,
+  icon,
+  label,
+  target,
+}: {
+  href: string;
+  icon: string;
+  label: string;
+  target?: "_blank";
+}) {
+  return (
+    <Link
+      href={href}
+      target={target}
+      rel={target === "_blank" ? "noopener noreferrer" : undefined}
+      className="tab-item text-foreground-secondary hover:text-foreground"
+    >
+      <span className="text-lg leading-none" aria-hidden="true">
+        {icon}
+      </span>
+      <span className="text-[11px] font-semibold leading-none">{label}</span>
+    </Link>
+  );
+}
+
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" suppressHydrationWarning className="scroll-smooth">
@@ -60,28 +86,22 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           </div>
 
           <header className="glass-nav-shell fixed inset-x-0 bottom-3 z-40 flex justify-center px-3">
-            <LiquidGlassNav className="w-full max-w-3xl p-0">
-              <div className="flex h-14 items-center justify-between gap-4 px-4 sm:px-5">
-                <Link href="/" className="inline-flex items-center text-lg font-bold leading-none text-foreground">
-                  Moments
-                </Link>
-
-                <nav className="flex items-center gap-1 sm:gap-1.5">
-                  <Link href="/" className="nav-link text-sm font-bold text-foreground-secondary hover:text-classic-blue">
-                    Home
-                  </Link>
-                  <Link href="/about" className="nav-link text-sm font-bold text-foreground-secondary hover:text-classic-blue">
-                    About
-                  </Link>
+            <LiquidGlassNav className="w-full max-w-xl p-0">
+              <div className="flex h-14 items-center justify-around px-2">
+                <TabItem href="/" icon="🏠" label="Moments" />
+                <TabItem href="/explore" icon="🌐" label="Explore" />
+                <TabItem href="/about" icon="ℹ️" label="About" />
+                <TabItem href={SITE_CONFIG.createMomentUrl} target="_blank" icon="✏️" label="Create" />
+                <div className="tab-item text-foreground-secondary">
                   <ThemeToggle />
-                </nav>
+                  <span className="text-[11px] font-semibold leading-none">Theme</span>
+                </div>
               </div>
             </LiquidGlassNav>
           </header>
 
           <div className="page-body">
-            <main className="mx-auto max-w-5xl px-4 py-10 pb-14 sm:px-6 lg:px-8">{children}</main>
-            <Footer />
+            <main className="mx-auto max-w-3xl px-4 pt-6 pb-20 sm:px-6">{children}</main>
           </div>
         </ThemeProvider>
       </body>

@@ -4,6 +4,21 @@ import { useEffect, useRef } from "react";
 import { useTheme } from "@/components/ThemeProvider";
 import { SITE_CONFIG } from "@/content/config";
 
+function getGiscusThemeUrl(theme: "light" | "dark") {
+  if (typeof window === "undefined") return "";
+
+  const configuredBasePath = (() => {
+    try {
+      const pathname = new URL(SITE_CONFIG.siteUrl).pathname.replace(/\/$/, "");
+      return window.location.hostname === "localhost" ? "" : pathname;
+    } catch {
+      return "";
+    }
+  })();
+
+  return `${window.location.origin}${configuredBasePath}/giscus/${theme}.css`;
+}
+
 export function GiscusComments({ discussionNumber }: { discussionNumber: number }) {
   const containerRef = useRef<HTMLDivElement>(null);
   const { actualTheme } = useTheme();
@@ -24,7 +39,7 @@ export function GiscusComments({ discussionNumber }: { discussionNumber: number 
     script.setAttribute("data-reactions-enabled", "1");
     script.setAttribute("data-emit-metadata", "1");
     script.setAttribute("data-input-position", "top");
-    script.setAttribute("data-theme", actualTheme === "dark" ? "dark" : "light");
+    script.setAttribute("data-theme", getGiscusThemeUrl(actualTheme === "dark" ? "dark" : "light"));
     script.setAttribute("data-lang", "en");
     script.setAttribute("data-loading", "lazy");
     script.crossOrigin = "anonymous";
@@ -42,5 +57,9 @@ export function GiscusComments({ discussionNumber }: { discussionNumber: number 
     );
   }
 
-  return <div ref={containerRef} className="mt-8" />;
+  return (
+    <div className="mt-8 rounded-[2rem] border border-border/40 bg-surface-elevated/30 p-2 shadow-2xl backdrop-blur-xl">
+      <div ref={containerRef} />
+    </div>
+  );
 }

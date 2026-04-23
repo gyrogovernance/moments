@@ -1,4 +1,5 @@
 import { notFound } from "next/navigation";
+import Link from "next/link";
 import { GiscusComments } from "@/components/GiscusComments";
 import { MomentDetail } from "@/components/MomentDetail";
 import { getMomentByNumber, getMoments } from "@/lib/moments";
@@ -18,7 +19,12 @@ export default async function MomentPage({ params }: { params: Promise<{ number:
   }
 
   return (
-    <div className="space-y-8">
+    <div className="animate-fade-in-up space-y-4">
+      <div className="flex items-center justify-between">
+        <Link href="/" className="text-sm font-semibold text-foreground-secondary hover:text-classic-blue">
+          ← Back
+        </Link>
+      </div>
       <MomentDetail moment={moment} />
       <GiscusComments discussionNumber={moment.number} />
     </div>

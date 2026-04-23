@@ -3,7 +3,7 @@ import { SITE_CONFIG } from "@/content/config";
 
 export default function AboutPage() {
   return (
-    <div className="space-y-8">
+    <div className="space-y-6 pt-2">
       <div className="space-y-4 text-center">
         <h1 className="text-4xl font-bold text-foreground sm:text-5xl">About Moments</h1>
         <p className="mx-auto max-w-3xl text-lg text-foreground-secondary">
@@ -12,7 +12,7 @@ export default function AboutPage() {
       </div>
 
       <LiquidGlassCard className="glass-card glass-card-blue rounded-[2rem] shadow-2xl">
-        <div className="space-y-4 p-6 sm:p-8">
+        <div className="space-y-4 p-5 sm:p-6">
           <h2 className="text-2xl font-bold text-foreground">What is a Moment?</h2>
           <p className="text-foreground-secondary">
             A Moment is a link, a video, an image, or a short reflection. It contributes one piece of context to one domain. You share it, you say why it matters, and it becomes part of the public record.
@@ -24,7 +24,7 @@ export default function AboutPage() {
       </LiquidGlassCard>
 
       <LiquidGlassCard className="glass-card glass-card-purple rounded-[2rem] shadow-2xl">
-        <div className="space-y-4 p-6 sm:p-8">
+        <div className="space-y-4 p-5 sm:p-6">
           <h2 className="text-2xl font-bold text-foreground">The Four Domains</h2>
           <div className="grid gap-4 md:grid-cols-2">
             {SITE_CONFIG.domains.map((domain) => (
@@ -40,10 +40,10 @@ export default function AboutPage() {
       </LiquidGlassCard>
 
       <LiquidGlassCard className="glass-card glass-card-amber rounded-[2rem] shadow-2xl">
-        <div className="space-y-4 p-6 sm:p-8">
+        <div className="space-y-4 p-5 sm:p-6">
           <h2 className="text-2xl font-bold text-foreground">The Four Principles (The Human Mark)</h2>
           <p className="text-foreground-secondary">
-            Every Moment is checked against four principles from The Human Mark, a framework that distinguishes human and artificial sources of authority and agency. These principles guard against structural displacement risks.
+            Every Moment is checked against four alignment principles from The Human Mark. The principles are not the same thing as the risks beneath them: each principle has a corresponding displacement risk that appears when Direct and Indirect Authority or Agency are confused.
           </p>
           <div className="grid gap-4 md:grid-cols-2">
             {SITE_CONFIG.principles.map((principle) => (
@@ -60,7 +60,7 @@ export default function AboutPage() {
       </LiquidGlassCard>
 
       <LiquidGlassCard className="glass-card glass-card-emerald rounded-[2rem] shadow-2xl">
-        <div className="space-y-4 p-6 sm:p-8">
+        <div className="space-y-4 p-5 sm:p-6">
           <h2 className="text-2xl font-bold text-foreground">How to Share a Moment</h2>
           <ol className="list-decimal space-y-2 pl-5 text-foreground-secondary">
             <li>Click &quot;Create a Moment on GitHub.&quot;</li>
@@ -84,7 +84,7 @@ export default function AboutPage() {
       </LiquidGlassCard>
 
       <LiquidGlassCard className="glass-card glass-card-translucent rounded-[2rem] shadow-2xl">
-        <div className="space-y-4 p-6 sm:p-8">
+        <div className="space-y-4 p-5 sm:p-6">
           <h2 className="text-2xl font-bold text-foreground">Behind the Sandbox</h2>
           <p className="text-foreground-secondary">
             Moments is grounded in the Moments Economy framework and The Human Mark, an AI safety epistemological framework developed by Gyro Governance. The four domains correspond to the four governance capacities that coherent collective intelligence must maintain. The four principles guard against the four structural displacement risks.
